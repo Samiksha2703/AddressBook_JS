@@ -106,9 +106,16 @@ try {
     detailsArray.push(new Contact("Pratiksha", "Thute", "Virat", "Airoli", "Maharashra",
         "852 475", "91 8624592165", "pratikshathute@gmail.com"));
     console.log("\ncontacts before being updated\n");
+
     detailsArray.forEach((contact) => console.log(contact.toString()));
+
     detailsArray.filter(contact => contact.firstName == "Pratiksha").map(contact => contact.firstName = "Sakshi");
     console.log("\ncontacts after being updated\n");
+    detailsArray.forEach((contact) => console.log(contact.toString()));
+
+    let index = detailsArray.findIndex(contact => contact.firstName == "Neha");
+    detailsArray.splice(index, 1);
+    console.log("\naddress book after deleting contct");
     detailsArray.forEach((contact) => console.log(contact.toString()));
 }
 catch (e) {
