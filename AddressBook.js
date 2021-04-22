@@ -105,6 +105,10 @@ try {
         "963 698", "91 7525752131", "apurva.ikhe@gmail.com"));
     detailsArray.push(new Contact("Pratiksha", "Thute", "Virat", "Airoli", "Maharashra",
         "852 475", "91 8624592165", "pratikshathute@gmail.com"));
+    console.log("\ncontacts before being updated\n");
+    detailsArray.forEach((contact) => console.log(contact.toString()));
+    detailsArray.filter(contact => contact.firstName == "Pratiksha").map(contact => contact.firstName = "Sakshi");
+    console.log("\ncontacts after being updated\n");
     detailsArray.forEach((contact) => console.log(contact.toString()));
 }
 catch (e) {
