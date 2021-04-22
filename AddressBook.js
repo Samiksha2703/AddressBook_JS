@@ -84,11 +84,29 @@ class Contact {
     }
 
     toString() {
-        return "First Name: " + this.firstName + ", Last Name: " + this.lastName
+        return "First Name: " + this.firstName
+            + ", Last Name: " + this.lastName
             + "\nAddress: " + this.address
-            + ", City: " + this.city + ", State: "
-            + this.state + "\nZip: " + this.zip
-            + ", Phone Number: " + this.phoneNumber + ", Email: " + this.email;
+            + ", City: " + this.city
+            + ", State: " + this.state
+            + ", Zip: " + this.zip
+            + "\nPhone Number: " + this.phoneNumber
+            + ", Email: " + this.email;
     }
 }
 console.log("Welcome to the Address Book Program");
+try {
+    let detailsArray = new Array();
+    detailsArray.push(new Contact("Samiksha", "Shende", "RamNagar", "Wardha", "Maharashtra", "442 001",
+        "91 7643112366", "shende.samiksha@gmail.com"));
+    detailsArray.push(new Contact("Neha", "Diwate", "Nalod", "Ahmedabad", "Gujrat",
+        "369 785", "91 7658708428", "neha89@gmail.com"));
+    detailsArray.push(new Contact("Apurva", "Ikhe", "Panzarapol", "Vadodara", "Gujrat",
+        "963 698", "91 7525752131", "apurva.ikhe@gmail.com"));
+    detailsArray.push(new Contact("Pratiksha", "Thute", "Virat", "Airoli", "Maharashra",
+        "852 475", "91 8624592165", "pratikshathute@gmail.com"));
+    detailsArray.forEach((contact) => console.log(contact.toString()));
+}
+catch (e) {
+    console.log(e);
+}
