@@ -117,6 +117,14 @@ try {
     detailsArray.splice(index, 1);
     console.log("\naddress book after deleting contct");
     detailsArray.forEach((contact) => console.log(contact.toString()));
+
+    let count = 0;
+    function FindNumberOfContacts(contact) {
+        if (contact != null)
+            return count++;
+    }
+    detailsArray.reduce(FindNumberOfContacts, 0);
+    console.log("\nTotal number of contacts in array  : " + count);
 }
 catch (e) {
     console.log(e);
