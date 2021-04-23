@@ -201,6 +201,26 @@ try {
     }
     console.log("Sorting by firstName");
     sortByName();
+
+    //UC12 sort address book by city state and zip
+
+    let cityArray = detailsArray.filter(contact => contact.city != null).map(contact => contact.city).sort();
+    console.log("\nSort By City");
+    cityArray.forEach(city => {
+        console.log(detailsArray.filter(contact => contact.city == city))
+    });
+
+    console.log("\nSort By State");
+    let stateArray = detailsArray.filter(contact => contact.state != null).map(contact => contact.state).sort();
+    stateArray.forEach(state => {
+        console.log(detailsArray.filter(contact => contact.state == state))
+    });
+
+    console.log("\nSort By Zip");
+    let zipArray = detailsArray.filter(contact => contact.zip != null).map(contact => contact.zip).sort();
+    zipArray.forEach(zip => {
+        console.log(detailsArray.filter(contact => contact.zip == zip))
+    });
 }
 catch (e) {
     console.log(e);
