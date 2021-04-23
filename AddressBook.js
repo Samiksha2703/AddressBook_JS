@@ -103,7 +103,7 @@ try {
         "369 785", "91 7658708428", "neha89@gmail.com"));
     detailsArray.push(new Contact("Apurva", "Ikhe", "Panzarapol", "Vadodara", "Gujrat",
         "963 698", "91 7525752131", "apurva.ikhe@gmail.com"));
-    detailsArray.push(new Contact("Pratiksha", "Thute", "Virat", "Airoli", "Maharashra",
+    detailsArray.push(new Contact("Pratiksha", "Thute", "Virat", "Airoli", "Maharashtra",
         "852 475", "91 8624592165", "pratikshathute@gmail.com"));
     console.log("\ncontacts before being updated\n");
 
@@ -145,6 +145,34 @@ try {
     addContact();
     console.log("Checking duplicate while adding new contact in the address book");
     detailsArray.forEach((contact) => console.log(contact.toString()));
+
+    //UC 8 search by city and state
+    function countPersonByCity(countByCity, contact) {
+        if (contact != null)
+            countByCity++;
+        return countByCity;
+    }
+    function searchByCity() {
+        if (serchByCity == 0) console.log("\nSearch not found by city name " + searchCity);
+        else console.log("\n" + serchByCity + " Search found by city name " + searchCity);
+    }
+    let searchCity = "Vadodara";
+    let serchByCity = detailsArray.filter(contact => contact.city == searchCity).map(contact => contact).reduce(countPersonByCity, 0);
+    searchByCity();
+
+
+    function countPersonByCity(countByState, contact) {
+        if (contact != null)
+            countByState++;
+        return countByState;
+    }
+    function searchByState() {
+        if (serchByState == 0) console.log("\nSearch not found by state name " + searchState);
+        else console.log("\n" + serchByState + " Search found by state name " + searchState);
+    }
+    let searchState = "Gujrat";
+    let serchByState = detailsArray.filter(contact => contact.state == searchState).map(contact => contact).reduce(countPersonByCity, 0);
+    searchByState();
 }
 catch (e) {
     console.log(e);
